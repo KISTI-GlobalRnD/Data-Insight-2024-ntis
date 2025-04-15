@@ -14,11 +14,10 @@
 
     <!-- Tailwind + DaisyUI CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        plugins: [window.daisyui],
-      };
-    </script>
+
+    <!-- DaisyUI만 CDN으로 따로 로드 (tailwind.config는 사용하지 않음) -->
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@3.8.0"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.js"></script>
   </head>
 
@@ -46,16 +45,17 @@
     <!-- Scatter Plot Section with iframe -->
     <section class="py-24 sm:py-32 border-t">
       <div class="mx-auto max-w-[1200px] px-6 text-center">
-        <h2 class="text-4xl font-bold sm:text-5xl">Explore Scatter Plots</h2>
+        <h2 class="text-4xl font-bold sm:text-5xl">Explore 2018-2022 NTIS Data</h2>
         <p class="mt-4 text-lg">Select a threshold to visualize filtered data.</p>
 
         <!-- 버튼 -->
-        <div class="mt-8 flex justify-center gap-4 flex-wrap">
-          <button onclick="changePlot(1)" class="btn btn-primary">Threshold 1</button>
-          <button onclick="changePlot(10)" class="btn btn-primary">Threshold 10</button>
-          <button onclick="changePlot(50)" class="btn btn-primary">Threshold 50</button>
-          <button onclick="changePlot(100)" class="btn btn-primary">Threshold 100</button>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <button onclick="changePlot(0)" class="btn btn-outline btn-primary">P10 &gt; 0</button>
+            <button onclick="changePlot(10)" class="btn btn-outline btn-primary">P10 &gt; 10</button>
+            <button onclick="changePlot(50)" class="btn btn-outline btn-primary">P10 &gt; 50</button>
+            <button onclick="changePlot(100)" class="btn btn-outline btn-primary">P10 &gt; 100</button>
         </div>
+          
 
         <!-- iframe container -->
         <div class="mt-12 flex justify-center w-full overflow-hidden rounded-xl shadow ring-1 ring-base-300">
@@ -93,7 +93,7 @@
             <a href="https://www.kisti.re.kr/post/data-insight?t=1744699800073" target="_blank" class="link link-hover text-primary">📊 KISTI 데이터 인사이트</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/young-jin-kim-8606b9142/" target="_blank" class="link link-hover text-primary">🙋‍♂️ 저자 링크드인</a>
+            <a href="https://www.linkedin.com/in/young-jin-kim-8606b9142/" target="_blank" class="link link-hover text-primary">🙋‍♂️ 주저자 링크드인</a>
           </li>
         </ul>
       </div>
