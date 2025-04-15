@@ -49,12 +49,15 @@
         <p class="mt-4 text-lg">Select a threshold to visualize filtered data.</p>
 
         <!-- 버튼 -->
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-            <button onclick="changePlot(0)" class="btn btn-outline btn-primary">P10 &gt; 0</button>
-            <button onclick="changePlot(10)" class="btn btn-outline btn-primary">P10 &gt; 10</button>
-            <button onclick="changePlot(50)" class="btn btn-outline btn-primary">P10 &gt; 50</button>
-            <button onclick="changePlot(100)" class="btn btn-outline btn-primary">P10 &gt; 100</button>
+        <!-- 버튼 그룹 -->
+        <div id="threshold-buttons" class="mt-8 flex flex-wrap justify-center gap-3">
+            <button onclick="changePlot(0, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 0</button>
+            <button onclick="changePlot(10, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 10</button>
+            <button onclick="changePlot(50, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 50</button>
+            <button onclick="changePlot(100, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 100</button>
         </div>
+          
+  
           
 
         <!-- iframe container -->
@@ -106,5 +109,36 @@
       }
     </script>
 
+    <!-- Button Hover -->
+    <script>
+        function changePlot(threshold, clickedButton) {
+        const frame = document.getElementById("plotFrame");
+        frame.src = `scatter_th${threshold}.html`;
+    
+        const buttons = document.querySelectorAll("#threshold-buttons button");
+        buttons.forEach(btn => {
+            btn.classList.remove(
+            "btn-active",
+            "scale-105",
+            "shadow-md",
+            "bg-primary",
+            "text-black"
+            );
+            btn.classList.add("btn-outline", "hover:bg-primary", "hover:text-black");
+        });
+    
+        clickedButton.classList.remove("btn-outline", "hover:bg-primary", "hover:text-black");
+        clickedButton.classList.add("btn-active", "scale-105", "shadow-md", "bg-primary", "text-black");
+        }
+    
+        window.addEventListener("DOMContentLoaded", () => {
+        const first = document.querySelector("#threshold-buttons button");
+        if (first) first.click();
+        });
+    </script>
+  
+  
+
   </body>
 </html>
+
