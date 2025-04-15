@@ -1,0 +1,78 @@
+<!-- Scatter Plot Section with iframe -->
+<section class="bg-white py-24 sm:py-32 border-t">
+    <div class="mx-auto max-w-[1200px] px-6 text-center">
+      <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">Explore Scatter Plots</h2>
+      <p class="mt-4 text-lg text-gray-600">Select a threshold to visualize filtered data.</p>
+  
+      <!-- 버튼 -->
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <button onclick="changePlot(1)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 1</button>
+        <button onclick="changePlot(10)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 10</button>
+        <button onclick="changePlot(50)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 50</button>
+        <button onclick="changePlot(100)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 100</button>
+      </div>
+  
+      <!-- iframe container -->
+      <div class="mt-12 flex justify-center w-full overflow-hidden rounded-xl shadow ring-1 ring-gray-200">
+        <!-- <div class="mt-12 w-full max-w-[1200px] mx-auto overflow-hidden rounded-xl shadow ring-1 ring-gray-200"> -->
+            <iframe
+            id="plotFrame"
+            src="scatter_th100.html"
+            class="w-full"
+            style="
+                min-height: 800px;
+                width: 100%;
+                max-width: 1200px;
+                height: 100%;
+                margin: 0 auto;
+                border: 0;
+                border-radius: 0.75rem;"
+            loading="lazy"
+            ></iframe>
+
+          <!-- </div>           -->
+      </div>
+    </div>
+  </section>
+
+<!-- 관련 링크 섹션 -->
+<section class="bg-white py-16 border-t mt-20">
+    <div class="mx-auto max-w-[1200px] px-6 text-center">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6">관련 링크</h3>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-indigo-600 text-lg font-medium">
+        <a href="https://github.com/KISTI-GlobalRnD" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          Global R&D GitHub
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://dap.kisti.re.kr/globalrnd" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          Global R&D 소개 페이지
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://www.kisti.re.kr/post/data-insight?t=1744699800073" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          KISTI 데이터 인사이트
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/young-jin-kim-8606b9142/" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          저자 링크드인
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+  <script>
+    function changePlot(threshold) {
+      const frame = document.getElementById("plotFrame");
+      frame.src = `scatter_th${threshold}.html`;
+    }
+  </script>
+  
