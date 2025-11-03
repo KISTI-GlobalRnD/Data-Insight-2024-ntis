@@ -1,5 +1,12 @@
 # 데이터 인사이트 및 혁신전략 분석 – GitHub 시범 페이지
 
+## 보고서 · 링크 · 문의
+- 보고서 소개: [KISTI 데이터 인사이트](https://www.kisti.re.kr/post/data-insight?t=1744699800073)
+- GitHub 조직: [Global R&D GitHub](https://github.com/KISTI-GlobalRnD)
+- 프로젝트 개요: [Global R&D 소개 페이지](https://dap.kisti.re.kr/globalrnd)
+- 연구 책임자: [김영진 선임 연구원 LinkedIn](https://www.linkedin.com/in/young-jin-kim-8606b9142/)
+- 문의: 김영진 선임 연구원 <kimyoungjin06@kisti.re.kr>
+
 ## 개요
 - 본 디렉터리는 「데이터 인사이트 및 혁신전략분석보고서」의 공개·재현성 강화를 위한 GitHub 자매 페이지(시범) 자료를 제공합니다.
 - `make_Web.ipynb` 노트북을 기반으로 Plotly 인터랙티브 시각화를 생성하고, 분석에 사용된 데이터셋과 산출물을 함께 제공합니다.
@@ -38,11 +45,3 @@
 - `index.html`은 Tailwind 기반의 간단한 레이아웃으로 작성되어 있어 추가 섹션(예: 텍스트 설명, 추가 링크)을 손쉽게 확장할 수 있습니다.
 - 다른 임계값 또는 축 조합을 시험하려면 노트북 내 `axis_options`, `threshold` 리스트를 수정 후 다시 실행하면 됩니다.
 - 추가적인 시각화나 데이터 파생 작업을 수행할 경우, 원본 데이터(`Data/*.parquet`)를 참고해 분석 컨텍스트를 유지해 주세요.
-
-## 보고서 및 관련 링크
-- 보고서 소개: [KISTI 데이터 인사이트](https://www.kisti.re.kr/post/data-insight?t=1744699800073)
-- GitHub 조직: [Global R&D GitHub](https://github.com/KISTI-GlobalRnD)
-- 프로젝트 개요: [Global R&D 소개 페이지](https://dap.kisti.re.kr/globalrnd)
-- 연구 책임자: [김영진 선임 연구원 LinkedIn](https://www.linkedin.com/in/young-jin-kim-8606b9142/)
-
-문의: 김영진 선임 연구원 kimyoungjin06@kisti.re.kr
