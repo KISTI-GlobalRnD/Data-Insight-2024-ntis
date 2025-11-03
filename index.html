@@ -1,144 +1,78 @@
-<!DOCTYPE html>
-<html lang="ko" data-theme="pastel">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KISTI Data Insight 제 46호</title>
-
-    <!-- Meta info -->
-    <meta name="title" content="KISTI Data Insight 제 46호">
-    <meta name="author" content="김영진">
-    <meta name="description" content="펀딩 유형에 따른 국가연구 개발사업 수준분석 - Beyond the Data and Science">
-    <meta name="date" content="2024-12-30">
-    <meta name="isbn" content="978-89-294-1736-9">
-
-    <!-- Tailwind + DaisyUI CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- DaisyUI만 CDN으로 따로 로드 (tailwind.config는 사용하지 않음) -->
-    <script src="https://cdn.jsdelivr.net/npm/daisyui@3.8.0"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.js"></script>
-  </head>
-
-  <body class="bg-base-100 text-base-content">
-
-    <!-- 메타정보 -->
-    <section class="pt-20 pb-10 border-b">
-      <div class="mx-auto max-w-[1200px] px-6">
-        <h1 class="text-3xl sm:text-4xl font-bold leading-snug">
-          펀딩 유형에 따른 국가연구 개발사업 수준분석
-        </h1>
-        <p class="mt-2 text-lg italic text-secondary">Beyond the Data and Science</p>
-
-        <div class="mt-6 text-sm space-y-1">
-          <p><strong>기사 번호:</strong> 제 46호</p>
-          <p><strong>발행일:</strong> 2024.12.30</p>
-          <p><strong>ISBN:</strong> 978-89-294-1736-9 (93500)</p>
-          <p><strong>주 저자:</strong> 김영진, 선임연구원 – KISTI 글로벌R&amp;D분석센터</p>
-          <p><strong>공 저자:</strong> 이정우, 선임연구원 – KISTI 글로벌R&amp;D분석센터</p>
-          <p><strong>공 저자:</strong> 박진서, 책임연구원 – KISTI 글로벌R&amp;D분석센터</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Scatter Plot Section with iframe -->
-    <section class="py-24 sm:py-32 border-t">
-      <div class="mx-auto max-w-[1200px] px-6 text-center">
-        <h2 class="text-4xl font-bold sm:text-5xl">Explore 2018-2022 NTIS Data</h2>
-        <p class="mt-4 text-lg">Select a threshold to visualize filtered data.</p>
-
-        <!-- 버튼 -->
-        <!-- 버튼 그룹 -->
-        <div id="threshold-buttons" class="mt-8 flex flex-wrap justify-center gap-3">
-            <button onclick="changePlot(0, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 0</button>
-            <button onclick="changePlot(10, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 10</button>
-            <button onclick="changePlot(50, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 50</button>
-            <button onclick="changePlot(100, this)" class="btn btn-outline btn-primary transition duration-200 hover:bg-primary hover:text-black">P10 &gt; 100</button>
-        </div>
-          
+<!-- Scatter Plot Section with iframe -->
+<section class="bg-white py-24 sm:py-32 border-t">
+    <div class="mx-auto max-w-[1200px] px-6 text-center">
+      <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">Explore Scatter Plots</h2>
+      <p class="mt-4 text-lg text-gray-600">Select a threshold to visualize filtered data.</p>
   
-          
-
-        <!-- iframe container -->
-        <div class="mt-12 flex justify-center w-full overflow-hidden rounded-xl shadow ring-1 ring-base-300">
-          <iframe
+      <!-- 버튼 -->
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <button onclick="changePlot(1)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 1</button>
+        <button onclick="changePlot(10)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 10</button>
+        <button onclick="changePlot(50)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 50</button>
+        <button onclick="changePlot(100)" class="rounded-md bg-indigo-600 px-4 py-2 text-white font-semibold hover:bg-indigo-500">Threshold 100</button>
+      </div>
+  
+      <!-- iframe container -->
+      <div class="mt-12 flex justify-center w-full overflow-hidden rounded-xl shadow ring-1 ring-gray-200">
+        <!-- <div class="mt-12 w-full max-w-[1200px] mx-auto overflow-hidden rounded-xl shadow ring-1 ring-gray-200"> -->
+            <iframe
             id="plotFrame"
             src="scatter_th100.html"
             class="w-full"
             style="
-              min-height: 800px;
-              width: 100%;
-              max-width: 1200px;
-              height: 800px;
-              max-height: 800px;
-              margin: 0 auto;
-              border: 0;
-              border-radius: 0.75rem;"
+                min-height: 800px;
+                width: 100%;
+                max-width: 1200px;
+                height: 100%;
+                margin: 0 auto;
+                border: 0;
+                border-radius: 0.75rem;"
             loading="lazy"
-          ></iframe>
-        </div>
+            ></iframe>
+
+          <!-- </div>           -->
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 관련 링크 섹션 -->
-    <section class="py-12 border-t mt-20">
-      <div class="mx-auto max-w-[1200px] px-6 text-center">
-        <h3 class="text-xl font-semibold mb-4">🔗 관련 링크</h3>
-        <ul class="flex flex-col sm:flex-row justify-center items-center gap-3 text-sm">
-          <li>
-            <a href="https://github.com/KISTI-GlobalRnD" target="_blank" class="link link-hover text-primary">🌐 Global R&D GitHub</a>
-          </li>
-          <li>
-            <a href="https://dap.kisti.re.kr/globalrnd" target="_blank" class="link link-hover text-primary">🏛 Global R&D 센터 소개</a>
-          </li>
-          <li>
-            <a href="https://www.kisti.re.kr/post/data-insight?t=1744699800073" target="_blank" class="link link-hover text-primary">📊 KISTI 데이터 인사이트</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/young-jin-kim-8606b9142/" target="_blank" class="link link-hover text-primary">🙋‍♂️ 주저자 링크드인</a>
-          </li>
-        </ul>
+<!-- 관련 링크 섹션 -->
+<section class="bg-white py-16 border-t mt-20">
+    <div class="mx-auto max-w-[1200px] px-6 text-center">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6">관련 링크</h3>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-indigo-600 text-lg font-medium">
+        <a href="https://github.com/KISTI-GlobalRnD" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          Global R&D GitHub
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://dap.kisti.re.kr/globalrnd" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          Global R&D 소개 페이지
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://www.kisti.re.kr/post/data-insight?t=1744699800073" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          KISTI 데이터 인사이트
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/young-jin-kim-8606b9142/" target="_blank" class="hover:underline hover:text-indigo-500 flex items-center gap-2">
+          저자 링크드인
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7v7m0 0L10 21l-7-7 11-11z" />
+          </svg>
+        </a>
       </div>
-    </section>
-
-    <script>
-      function changePlot(threshold) {
-        const frame = document.getElementById("plotFrame");
-        frame.src = `scatter_th${threshold}.html`;
-      }
-    </script>
-
-    <!-- Button Hover -->
-    <script>
-        function changePlot(threshold, clickedButton) {
-        const frame = document.getElementById("plotFrame");
-        frame.src = `scatter_th${threshold}.html`;
-    
-        const buttons = document.querySelectorAll("#threshold-buttons button");
-        buttons.forEach(btn => {
-            btn.classList.remove(
-            "btn-active",
-            "scale-105",
-            "shadow-md",
-            "bg-primary",
-            "text-black"
-            );
-            btn.classList.add("btn-outline", "hover:bg-primary", "hover:text-black");
-        });
-    
-        clickedButton.classList.remove("btn-outline", "hover:bg-primary", "hover:text-black");
-        clickedButton.classList.add("btn-active", "scale-105", "shadow-md", "bg-primary", "text-black");
-        }
-    
-        window.addEventListener("DOMContentLoaded", () => {
-        const first = document.querySelector("#threshold-buttons button");
-        if (first) first.click();
-        });
-    </script>
-  
+    </div>
+  </section>
   
 
-  </body>
-</html>
-
+  <script>
+    function changePlot(threshold) {
+      const frame = document.getElementById("plotFrame");
+      frame.src = `scatter_th${threshold}.html`;
+    }
+  </script>
+  
