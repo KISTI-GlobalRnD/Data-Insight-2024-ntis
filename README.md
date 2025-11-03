@@ -5,7 +5,7 @@
 - 보고서 소개: [KISTI 데이터 인사이트](https://www.kisti.re.kr/post/data-insight?t=1744699800073)
 - GitHub 조직: [Global R&D GitHub](https://github.com/KISTI-GlobalRnD)
 - 프로젝트 개요: [Global R&D 소개 페이지](https://dap.kisti.re.kr/globalrnd)
-- 연구 책임자: [김영진 선임 연구원 LinkedIn](https://www.linkedin.com/in/young-jin-kim-8606b9142/)
+- Maintainer: [김영진 (LinkedIn)](https://www.linkedin.com/in/young-jin-kim-8606b9142/)
 - 문의: 김영진 선임 연구원 <kimyoungjin06@kisti.re.kr>
 
 ## 개요
