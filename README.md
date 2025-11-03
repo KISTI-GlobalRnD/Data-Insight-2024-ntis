@@ -1,6 +1,7 @@
 # 데이터 인사이트 및 혁신전략 분석 – GitHub 시범 페이지
 
 ## 보고서 · 링크 · 문의
+- GitHub Pages: https://kisti-globalrnd.github.io/Data-Insight-2024-ntis/
 - 보고서 소개: [KISTI 데이터 인사이트](https://www.kisti.re.kr/post/data-insight?t=1744699800073)
 - GitHub 조직: [Global R&D GitHub](https://github.com/KISTI-GlobalRnD)
 - 프로젝트 개요: [Global R&D 소개 페이지](https://dap.kisti.re.kr/globalrnd)
